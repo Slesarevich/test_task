@@ -10,6 +10,11 @@
                                  <src path="Sudoku-src/"/>
                          </javac>
                  </target>
-
+				 
+				<target name="Sudoku.jar" description="make jar" depends="compile">
+                         <jar destfile="build/Sudoku.jar">
+                                
+                         </jar>
+                 </target>
 
            </project>
