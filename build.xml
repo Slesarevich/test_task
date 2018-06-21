@@ -16,5 +16,6 @@
                                 
                          </jar>
                  </target>
-
+					
+					<target name="do"  depends="Sudoku.jar"/>
            </project>
