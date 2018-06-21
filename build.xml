@@ -7,7 +7,7 @@
 
                  <target name="compile"  depends="dir_out">
                          <javac destdir="build/class">
-                                 <src path="Sudoku-src/oyg/sudoku/"/>
+                                 <src path="Sudoku-src/oyg/"/>
                          </javac>
                  </target>
 
