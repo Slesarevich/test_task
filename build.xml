@@ -11,11 +11,5 @@
                          </javac>
                  </target>
 
-                 <target name="all" description="Do the build"  depends="compile"/>
-
-                 <target name="clean" description="clean up">
-                         <echo>I'm cleaning up.</echo>
-                         <delete dir="build"/>
-                 </target>
 
            </project>
