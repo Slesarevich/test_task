@@ -1,0 +1,21 @@
+ <project name="Sudoku" default="compile" >
+
+                 <target name="dir_out" >
+                         <mkdir dir="build"/>
+                         <mkdir dir="build/class"/>
+                 </target>
+
+                 <target name="compile"  depends="dir_out">
+                         <javac destdir="build/class">
+                                 <src path="Sudoku-src/oyg/sudoku/"/>
+                         </javac>
+                 </target>
+
+                 <target name="all" description="Do the build"  depends="compile"/>
+
+                 <target name="clean" description="clean up">
+                         <echo>I'm cleaning up.</echo>
+                         <delete dir="build"/>
+                 </target>
+
+           </project>
