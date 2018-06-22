@@ -3,16 +3,23 @@
                  <target name="dir_out" >
                          <mkdir dir="build"/>
                          <mkdir dir="build/class"/>
+						 <mkdir dir="out_jar"/>
                  </target>
-
-                 <target name="compile"  depends="dir_out">
+				 
+				 <target name="clean">
+				 <delete dir="build" />
+				<delete dir="Sudoku-src" />
+				
+					</target>
+                 
+				 <target name="compile"  depends="dir_out">
                          <javac destdir="build/class">
                                  <src path="Sudoku-src/"/>
                          </javac>
                  </target>
 				 
 				<target name="Sudoku.jar" description="make jar" depends="compile">
-                         <jar destfile="build/Sudoku.jar">
+                         <jar destfile="out_jar/Sudoku.jar">
                                 <fileset dir="build/class">
                                         <include name="**/*.class"/>
                                  </fileset>
