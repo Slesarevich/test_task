@@ -19,7 +19,8 @@ public class MainForm extends javax.swing.JFrame {
     public MainForm() {
         initComponents();
     }
-    public int getNumberSelected(){
+    
+public int getNumberSelected(){
         return numSelected;
     }
     
@@ -168,7 +169,8 @@ public class MainForm extends javax.swing.JFrame {
         }
         
     }
-    private void newGameActionPerformed(java.awt.event.ActionEvent evt) {                                              
+    
+private void newGameActionPerformed(java.awt.event.ActionEvent evt) {                                              
 // TODO add your handling code here:
         jTextPane1.setText("");
         initiatorObject.NewGame(this.getDifficulty());
@@ -197,7 +199,8 @@ public class MainForm extends javax.swing.JFrame {
         numSelected = Integer.parseInt (((javax.swing.JToggleButton)evt.getSource()).getText());
         setNumSelected(numSelected);
     }
-    public void setNumSelected(int num){
+    
+public void setNumSelected(int num){
         int i=0;
         for (i=0;i<numToggleButton.length;i++){
             if (Integer.parseInt(numToggleButton[i].getText())==num){
@@ -209,13 +212,16 @@ public class MainForm extends javax.swing.JFrame {
             }
         }
     }
-    public void setSodukobject(Soduko newSodukoObject){
+    
+public void setSodukobject(Soduko newSodukoObject){
         sodukoObject = newSodukoObject;
     }
-    public void setInitiatorObject(CreateSudokuGUI newInitiatorObject){
+    
+public void setInitiatorObject(CreateSudokuGUI newInitiatorObject){
         initiatorObject = newInitiatorObject;
     }
-    public int getDifficulty(){
+    
+public int getDifficulty(){
         return (int)jSlider1.getValue();
     }
     

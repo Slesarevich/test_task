@@ -36,7 +36,8 @@ public class CreateSudokuGUI {
         frame1Object.printSudokuBoard();
         
     }
-    public static void main(String[] args){
+    
+public static void main(String[] args){
         
         CreateSudokuGUI sudoku = new CreateSudokuGUI();
     }
@@ -202,7 +203,8 @@ class frame1 extends javax.swing.JFrame {
         }
         
     }
-    private void KeyboardPressed(java.awt.event.KeyEvent evt) {
+    
+private void KeyboardPressed(java.awt.event.KeyEvent evt) {
 // TODO add your handling code here:
         char pressedKey = evt.getKeyChar();
         int numSelected;
@@ -212,7 +214,8 @@ class frame1 extends javax.swing.JFrame {
         }
         
     }
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {                                     
+    
+private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {                                     
 // TODO add your handling code here:
         
         Object j = new Object();
@@ -317,10 +320,12 @@ class frame1 extends javax.swing.JFrame {
         }   
         RefreshPotentials(jLabel);
     }
-    public void setMainFormObject(MainForm mainFormObject){
+    
+public void setMainFormObject(MainForm mainFormObject){
         mainForm = mainFormObject;
     }
-    public void setSodukoBoard(Soduko sodukoObject){
+    
+public void setSodukoBoard(Soduko sodukoObject){
         SodukoBoard = sodukoObject;
     }
     
@@ -412,22 +417,27 @@ class OJLabel extends javax.swing.JLabel{
         UserData = userdata;
         
     }
-    public Object getUserData(){
+    
+public Object getUserData(){
         return UserData;
     }
-    public void setHorizontalIndex(int index){
+    
+public void setHorizontalIndex(int index){
         hotizIndex = index;
         
     }
-    public int getHorizontalIndex(){
+    
+public int getHorizontalIndex(){
         return hotizIndex;
         
     }
-    public void setVerticalIndex(int index){
+    
+public void setVerticalIndex(int index){
         vertIndex = index;
         
     }
-    public int getVerticalIndex(){
+    
+public int getVerticalIndex(){
         return vertIndex;
         
     }
@@ -441,16 +451,19 @@ class OJLabel extends javax.swing.JLabel{
         return potentials.size();
         
     }
-    public boolean addPotential(javax.swing.JLabel label){
+    
+public boolean addPotential(javax.swing.JLabel label){
         return potentials.add(label);
   
     }
-    public void removePotential(int index){
+    
+public void removePotential(int index){
         boolean res = oldPotentials.add(potentials.get(index));
         potentials.remove(index);
         
     }
-    public boolean removePotential(javax.swing.JLabel label){
+    
+public boolean removePotential(javax.swing.JLabel label){
         boolean res = oldPotentials.add(potentials.get(potentials.indexOf(label)));
         if (res) {
             return potentials.remove(label);
@@ -460,19 +473,24 @@ class OJLabel extends javax.swing.JLabel{
         }
         
     }
-    public ArrayList getPotentials(){
+    
+public ArrayList getPotentials(){
         return potentials;
     }
-    public void setDirectParent(Object parentObject){
+    
+public void setDirectParent(Object parentObject){
         parent = parentObject;
     }
-    public Object getDirectParent() {
+    
+public Object getDirectParent() {
         return parent;
     }
-    public ArrayList getOldPotentials(){
+    
+public ArrayList getOldPotentials(){
         return oldPotentials;
     }
-    public void removeAllPotentials(){
+    
+public void removeAllPotentials(){
         int i=0;
         oldPotentials.clear();
         for (i=0;i<potentials.size();i++){
@@ -481,10 +499,12 @@ class OJLabel extends javax.swing.JLabel{
         potentials.clear();
         
     }
-    public void removeAllOldPotentials(){
+    
+public void removeAllOldPotentials(){
         oldPotentials.clear();
     }
-    public int isPotentialExist(javax.swing.JLabel label){
+    
+public int isPotentialExist(javax.swing.JLabel label){
         int currPotentialNumber = Integer.parseInt(label.getText());
         int potentialNumber;
         int i=0;

@@ -23,7 +23,7 @@
 		</target>
                  
 		
-		<target name="checkstyle">
+		<target name="checkstyle" depends="dir_out">
 			<checkstyle config="/google_checks.xml">
 				<fileset dir="${srcDir}" includes="**/*.java"/>
 				<formatter type="plain"/>
@@ -51,14 +51,6 @@
 			</manifest>
 			</jar>
 		</target>
-		
-		
-		
-		
-		
-		
-		
-		
 		
 				  
 		<target name="do"  depends="Sudoku.jar"/>
