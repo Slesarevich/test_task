@@ -1,4 +1,4 @@
- <project name="Sudoku" default="run" >
+ <project name="Sudoku" default="do" >
 				 
 				<target name="clean">
 					<delete dir="build" />
