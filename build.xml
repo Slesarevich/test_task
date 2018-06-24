@@ -7,7 +7,7 @@
 	<property name="jarOutputDir" value="out_jar" />
 	<property name="mainClass" value="oyg.sudoku.CreateSudokuGUI" /> 
  				 
-	<taskdef name="style" classpath="checkstyle-8.10.1-all.jar"/>
+	<taskdef resource="com/puppycrawl/tools/checkstyle/ant/checkstyle-ant-task.properties" classpath="checkstyle-8.10.1-all.jar"/>
 	
 	
 				 
