@@ -22,7 +22,7 @@
                  
 		
 		<target name="checkstyle" depends="dir_out">
-			<taskdef resource="com/puppycrawl/tools/checkstyle/ant/checkstyle-ant-task.properties" classpath="checkstyle-8.10.1-all.jar"/>
+			
 			<checkstyle config="/google_checks.xml">
 				<fileset dir="${srcDir}" includes="**/*.java"/>
 				<formatter type="plain"/>
@@ -32,7 +32,7 @@
 		
 		
 		<target name="compile"  depends="checkstyle">
-			<javac destdir="${buildOutputDir}">
+			<javac destdir="${buildOutputDir}" includeantruntime="false">
 				<src path="Sudoku-src"/>
 			</javac>
 		</target>
