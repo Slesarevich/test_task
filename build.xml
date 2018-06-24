@@ -1,9 +1,4 @@
  <project name="Sudoku" default="run" >
-
-                 <target name="dir_out" depends="clean">
-                    <mkdir dir="build"/>
-					<mkdir dir="out_jar"/>
-                 </target>
 				 
 				<target name="clean">
 					<delete dir="build" />
