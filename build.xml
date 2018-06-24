@@ -8,6 +8,7 @@
 					
 				<target name="dir_out" depends="clean">
                          <mkdir dir="build"/>
+						 <mkdir dir="Sudoku-src"/>
 						 <mkdir dir="out_jar"/>
                 </target>
                  
