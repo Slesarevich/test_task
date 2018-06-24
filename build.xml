@@ -1,38 +1,40 @@
  <project name="Sudoku" default="do" >
-				 
-				<target name="clean">
-					<delete dir="build" />
-					<delete dir="out_jar" />
-				</target>
+ 
+	<property name="_version" value="1.3" /> 
+	<property name="buildUser" value="Sergey_Slesarevich" /> 
+	<property name="buildOutputDir" value="build" />
+	<property name="srcDir" value="Sudoku-src" />
+	<property name="jarOutputDir" value="out_jar" />
+	<property name="mainClass" value="oyg.sudoku.CreateSudokuGUI" /> 
+ 				 
+		<target name="clean">
+			<delete dir="${buildOutputDir}" />
+			<delete dir="${jarOutputDir}" />
+		</target>
 					
-				<target name="dir_out" depends="clean">
-                         <mkdir dir="build"/>
-						 <mkdir dir="out_jar"/>
-                </target>
+		<target name="dir_out" depends="clean">
+			<mkdir dir="${buildOutputDir}"/>
+			<mkdir dir="${jarOutputDir}"/>
+		</target>
                  
-				 <target name="compile"  depends="dir_out">
-                         <javac destdir="build">
-                                 <src path="Sudoku-src/"/>
-                         </javac>
-                 </target>
+		<target name="compile"  depends="dir_out">
+			<javac destdir="${buildOutputDir}">
+				<src path="Sudoku-src"/>
+			</javac>
+		</target>
 				 
-				<target name="Sudoku.jar" description="make jar" depends="compile">
-                         <jar destfile="out_jar/Sudoku.jar">
-                                <fileset dir="build">
-                                        <include name="**/*.class"/>
-                                 </fileset>
-							<manifest>				
-								<attribute name="Built-By" value="Sergey" />
-								<attribute name="Version" value="1.0" />
-								<attribute name="Main-Class" value="oyg.sudoku.CreateSudokuGUI" />
-							</manifest>
-                         </jar>
-                 </target>
-				 
-				<target name="run" depends="compile">
-					<java classname="CreateSudokuGUI" classpath="build/oyg/sudoku"/>
-				</target>
-				 
-					
-					<target name="do"  depends="Sudoku.jar"/>
-           </project>
+		<target name="Sudoku.jar" description="make jar" depends="compile">
+			<jar destfile="${jarOutputDir}/Sudoku.jar">
+				<fileset dir="${buildOutputDir}">
+					<include name="**/*.class"/>
+				</fileset>
+			<manifest>				
+				<attribute name="Built-By" value="${buildUser}" />
+				<attribute name="Version" value="${_version}" />
+				<attribute name="Main-Class" value="${mainClass}" />
+			</manifest>
+			</jar>
+		</target>
+				  
+		<target name="do"  depends="Sudoku.jar"/>
+</project>
