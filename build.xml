@@ -1,16 +1,20 @@
- <project name="Sudoku" default="do" >
+ <project name="Sudoku" default="run" >
 
-                 <target name="dir_out" >
-                         <mkdir dir="build"/>
-						 <mkdir dir="out_jar"/>
+                 <target name="dir_out" depends="clean">
+                    <mkdir dir="build"/>
+					<mkdir dir="out_jar"/>
                  </target>
 				 
-				 <target name="clean">
-				 <delete dir="build" />
-				<delete dir="Sudoku-src" />
-				<delete dir="out_jar" />
-				
-					</target>
+				<target name="clean">
+					<delete dir="build" />
+					<delete dir="Sudoku-src" />
+					<delete dir="out_jar" />
+				</target>
+					
+				<target name="dir_out" depends="clean">
+                         <mkdir dir="build"/>
+						 <mkdir dir="out_jar"/>
+                </target>
                  
 				 <target name="compile"  depends="dir_out">
                          <javac destdir="build">
