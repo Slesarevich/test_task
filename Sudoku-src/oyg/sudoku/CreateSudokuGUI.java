@@ -8,10 +8,10 @@ import oyg.exceptions.*;
 public class CreateSudokuGUI {
     //public MainForm form1;
     /** Creates a new instance of CreateSudokuGUI */
-    private MainForm mainFormObject;
-    private frame1 frame1Object;
-    private Soduko SodukoBoard;
-    public CreateSudokuGUI() {
+  private MainForm mainFormObject;
+  private frame1 frame1Object;
+  private Soduko SodukoBoard;
+  public CreateSudokuGUI() {
         mainFormObject = new MainForm();
         frame1Object = new frame1();        
         frame1Object.setMainFormObject(mainFormObject);
@@ -26,7 +26,7 @@ public class CreateSudokuGUI {
         //mainFormObject.setFrame1Object(frame1Object);
     }
     
-    public void NewGame(int level){
+  public void NewGame(int level){
        
         SodukoBoard = new Soduko();
         frame1Object.setSodukoBoard(SodukoBoard);
@@ -46,14 +46,14 @@ public static void main(String[] args){
 class frame1 extends javax.swing.JFrame {
     
     /** Creates new form frame1 */
-    public frame1() {
+  public frame1() {
         
         initComponents();
         
     }
     
                    
-    private void initComponents() {
+  private void initComponents() {
         jTextField1 = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
@@ -94,7 +94,7 @@ class frame1 extends javax.swing.JFrame {
             /*public void keyTyped(java.awt.event.KeyEvent evt) {
                 KeyboardTyped(evt);
             }*/
-            public void keyPressed(java.awt.event.KeyEvent evt) {
+          public void keyPressed(java.awt.event.KeyEvent evt) {
                 KeyboardPressed(evt);
             }
         });
@@ -180,7 +180,7 @@ class frame1 extends javax.swing.JFrame {
                 jLabel1[i][j].setUserData(helperUserData);
                 jLabel1[i][j].setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
                 /*jLabel1[i][j].addMouseListener(new java.awt.event.MouseAdapter() {
-                    public void mouseClicked(java.awt.event.MouseEvent evt) {
+                  public void mouseClicked(java.awt.event.MouseEvent evt) {
                         jLabel1MouseClicked(evt);
                     }
                 });*/
@@ -193,7 +193,7 @@ class frame1 extends javax.swing.JFrame {
     }
     // </editor-fold>                        
 
-    private void KeyboardTyped(java.awt.event.KeyEvent evt) {
+  private void KeyboardTyped(java.awt.event.KeyEvent evt) {
 // TODO add your handling code here:
         char pressedKey = evt.getKeyChar();
         int numSelected;
@@ -237,11 +237,11 @@ private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {
     }                                    
   
     
-    private void doNothingEvent(java.awt.event.MouseEvent evt){
+  private void doNothingEvent(java.awt.event.MouseEvent evt){
     
     }
     
-    private void AddNumToBoard(OJLabel jLabel){
+  private void AddNumToBoard(OJLabel jLabel){
         int numSelected = mainForm.getNumberSelected();
         String numToAdd = String.valueOf(numSelected);
         if (jLabel.getText().equals(numToAdd)){
@@ -267,7 +267,7 @@ private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {
     }
     //this method takes the arraylist from the label object and creates
     //potentials 
-    private void RefreshPotentials(OJLabel jLabel){
+  private void RefreshPotentials(OJLabel jLabel){
         final int[] HORIZ = {1,15,30,45,1,1};
         final int[] VERT = {1,1,1,1,20,40};
         int i=0;
@@ -296,7 +296,7 @@ private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {
     }
     //this just add the label object to the parent label object container
     //does not draw the new object!!!
-    private void AddPotentialNumber(OJLabel jLabel){
+  private void AddPotentialNumber(OJLabel jLabel){
         
         
         int currPotentials = jLabel.getNumberOfPotentials();
@@ -330,7 +330,7 @@ public void setSodukoBoard(Soduko sodukoObject){
     }
     
     
-    public void printSudokuBoard(){
+  public void printSudokuBoard(){
         int i,j;
         String text;
         int[][] tempSodukoBoard = SodukoBoard.StateBoard();
@@ -344,7 +344,7 @@ public void setSodukoBoard(Soduko sodukoObject){
                     java.awt.event.MouseListener[] listener = jLabel1[i][j].getMouseListeners();
                     if (listener.length==0){
                         jLabel1[i][j].addMouseListener(new java.awt.event.MouseAdapter() {
-                            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                          public void mouseClicked(java.awt.event.MouseEvent evt) {
                                 jLabel1MouseClicked(evt);
                             }
                         });
@@ -371,32 +371,32 @@ public void setSodukoBoard(Soduko sodukoObject){
         
     }
     // Variables declaration - do not modify 
-    private OJLabel[][] jLabel1;
+  private OJLabel[][] jLabel1;
     //private javax.swing.JLabel jLabel1;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator10;
-    private javax.swing.JSeparator jSeparator11;
-    private javax.swing.JSeparator jSeparator12;
-    private javax.swing.JSeparator jSeparator13;
-    private javax.swing.JSeparator jSeparator14;
-    private javax.swing.JSeparator jSeparator15;
-    private javax.swing.JSeparator jSeparator16;
-    private javax.swing.JSeparator jSeparator17;
-    private javax.swing.JSeparator jSeparator18;
-    private javax.swing.JSeparator jSeparator19;
-    private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JSeparator jSeparator20;
-    private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JSeparator jSeparator5;
-    private javax.swing.JSeparator jSeparator6;
-    private javax.swing.JSeparator jSeparator7;
-    private javax.swing.JSeparator jSeparator8;
-    private javax.swing.JSeparator jSeparator9;
-    private javax.swing.JTextField jTextField1;
+  private javax.swing.JSeparator jSeparator1;
+  private javax.swing.JSeparator jSeparator10;
+  private javax.swing.JSeparator jSeparator11;
+  private javax.swing.JSeparator jSeparator12;
+  private javax.swing.JSeparator jSeparator13;
+  private javax.swing.JSeparator jSeparator14;
+  private javax.swing.JSeparator jSeparator15;
+  private javax.swing.JSeparator jSeparator16;
+  private javax.swing.JSeparator jSeparator17;
+  private javax.swing.JSeparator jSeparator18;
+  private javax.swing.JSeparator jSeparator19;
+  private javax.swing.JSeparator jSeparator2;
+  private javax.swing.JSeparator jSeparator20;
+  private javax.swing.JSeparator jSeparator3;
+  private javax.swing.JSeparator jSeparator4;
+  private javax.swing.JSeparator jSeparator5;
+  private javax.swing.JSeparator jSeparator6;
+  private javax.swing.JSeparator jSeparator7;
+  private javax.swing.JSeparator jSeparator8;
+  private javax.swing.JSeparator jSeparator9;
+  private javax.swing.JTextField jTextField1;
     // End of variables declaration    
-    private MainForm mainForm;
-    private Soduko SodukoBoard;
+  private MainForm mainForm;
+  private Soduko SodukoBoard;
 }
 
 
@@ -406,14 +406,14 @@ public void setSodukoBoard(Soduko sodukoObject){
 
 
 class OJLabel extends javax.swing.JLabel{
-    private Object UserData;
-    private int hotizIndex,vertIndex;
+  private Object UserData;
+  private int hotizIndex,vertIndex;
     //private int numOfPotentials;
-    private ArrayList potentials = new ArrayList();
-    private ArrayList oldPotentials = new ArrayList();
-    private Object parent;
+  private ArrayList potentials = new ArrayList();
+  private ArrayList oldPotentials = new ArrayList();
+  private Object parent;
     
-    public void setUserData(Object userdata){
+  public void setUserData(Object userdata){
         UserData = userdata;
         
     }
@@ -442,12 +442,12 @@ public int getVerticalIndex(){
         
     }
 /*
-    public void setNumberOfPotentials(int number){
+  public void setNumberOfPotentials(int number){
         numOfPotentials = number;
         
         
     }*/
-    public int getNumberOfPotentials(){
+  public int getNumberOfPotentials(){
         return potentials.size();
         
     }

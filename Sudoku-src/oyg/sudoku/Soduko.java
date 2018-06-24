@@ -91,7 +91,7 @@ public class Soduko {
 		return result;
 	}
         
-        public void SodukoBuild(int level){
+      public void SodukoBuild(int level){
             final int[] basicRow = {1,2,3,4,5,6,7,8,9};
             int[] randomFirstRow = new int[9];
             int i=0,j=0;
@@ -132,7 +132,7 @@ public class Soduko {
         
         
         
-        private int[] createRandomFirstRow(int rowNum){
+      private int[] createRandomFirstRow(int rowNum){
             int[] row,column,tempArr;
             int[] basicRow = {1,2,3,4,5,6,7,8,9};
             int[] result = new int[9];
@@ -157,7 +157,7 @@ public class Soduko {
             return result;
             
         }
-        private int[][] createSodukoPuzzle(int level){
+      private int[][] createSodukoPuzzle(int level){
             int[][] tempArr = new int[SODUKO_SIZE][SODUKO_SIZE];
             int i=1,vertIndex,horzIndex;
             int counter1=0,counter2=0;
