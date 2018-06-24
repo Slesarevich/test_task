@@ -7,6 +7,12 @@
 	<property name="jarOutputDir" value="out_jar" />
 	<property name="mainClass" value="oyg.sudoku.CreateSudokuGUI" /> 
  				 
+	
+	
+	<taskdef resource="com/puppycrawl/tools/checkstyle/ant/checkstyle-ant-task.properties"
+         classpath="/path/to/checkstyle-8.10.1-all.jar"/>
+				 
+				 
 		<target name="clean">
 			<delete dir="${buildOutputDir}" />
 			<delete dir="${jarOutputDir}" />
@@ -19,6 +25,8 @@
                  
 		
 		<target name="checkstyle">
+		<taskdef classpath="f:/_test_task/checkstyle-8.10.1-all.jar"/>
+		
 			<checkstyle config="google_checks.xml">
 				<fileset dir="${srcDir}" includes="**/*.java"/>
 				<formatter type="plain"/>
