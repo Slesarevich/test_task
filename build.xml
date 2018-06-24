@@ -21,11 +21,16 @@
                                 <fileset dir="build">
                                         <include name="**/*.class"/>
                                  </fileset>
+							<manifest>				
+								<attribute name="Built-By" value="Sergey" />
+								<attribute name="Version" value="1.0" />
+								<attribute name="Main-Class" value="oyg.sudoku.CreateSudokuGUI" />
+							</manifest>
                          </jar>
                  </target>
 				 
 				<target name="run" depends="compile">
-					<java classname="oyg.sudoku.CreateSudokuGUI" classpath="build/oyg/sudoku"/>
+					<java classname="CreateSudokuGUI" classpath="build/oyg/sudoku"/>
 				</target>
 				 
 					
