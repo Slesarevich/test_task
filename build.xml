@@ -17,12 +17,23 @@
 			<mkdir dir="${jarOutputDir}"/>
 		</target>
                  
-		<target name="compile"  depends="dir_out">
+		
+		<target name="checkstyle">
+			<checkstyle config="google_checks.xml">
+				<fileset dir="${srcDir}" includes="**/*.java"/>
+				<formatter type="plain"/>
+				<formatter type="xml" toFile="checkstyle_errors.xml"/>
+			</checkstyle>
+		</target>
+		
+		
+		<target name="compile"  depends="checkstyle">
 			<javac destdir="${buildOutputDir}">
 				<src path="Sudoku-src"/>
 			</javac>
 		</target>
 				 
+		
 		<target name="Sudoku.jar" description="make jar" depends="compile">
 			<jar destfile="${jarOutputDir}/Sudoku.jar">
 				<fileset dir="${buildOutputDir}">
@@ -35,6 +46,15 @@
 			</manifest>
 			</jar>
 		</target>
+		
+		
+		
+		
+		
+		
+		
+		
+		
 				  
 		<target name="do"  depends="Sudoku.jar"/>
 </project>
