@@ -24,9 +24,7 @@
                  
 		
 		<target name="checkstyle">
-		
-		
-			<checkstyle config="google_checks.xml">
+			<checkstyle config="/google_checks.xml">
 				<fileset dir="${srcDir}" includes="**/*.java"/>
 				<formatter type="plain"/>
 				<formatter type="xml" toFile="checkstyle_errors.xml"/>
