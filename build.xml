@@ -11,8 +11,10 @@
 	
 				 
 		<target name="clean">
-			<delete dir="${buildOutputDir}" />
-			<delete dir="${jarOutputDir}" />
+			<delete includeemptydirs="true">
+				<fileset dir="${buildOutputDir}" includes="**/*"/>
+				<fileset dir="${jarOutputDir}" includes="**/*"/>
+			</delete>
 		</target>
 					
 		<target name="dir_out" depends="clean">
