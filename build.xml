@@ -2,13 +2,11 @@
 				 
 				<target name="clean">
 					<delete dir="build" />
-					<delete dir="Sudoku-src" />
 					<delete dir="out_jar" />
 				</target>
 					
 				<target name="dir_out" depends="clean">
                          <mkdir dir="build"/>
-						 <mkdir dir="Sudoku-src"/>
 						 <mkdir dir="out_jar"/>
                 </target>
                  
