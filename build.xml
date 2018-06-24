@@ -25,6 +25,11 @@
                                  </fileset>
                          </jar>
                  </target>
+				 
+				<target name="run" depends="compile">
+					<java classname="CreateSudokuGUI" classpath="build/oyg/sudoku"/>
+				</target>
+				 
 					
 					<target name="do"  depends="Sudoku.jar"/>
            </project>
