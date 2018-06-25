@@ -19,12 +19,11 @@
 		</target>
                  
 		
-		<target name="checkstyle" depends="dir_out">
-			
+		<target name="checkstyle" depends="dir_out">	
 			<checkstyle config="/google_checks.xml">
 				<fileset dir="${srcDir}" includes="**/*.java"/>
 				<formatter type="plain"/>
-				<formatter type="xml" toFile="checkstyle_errors.xml"/>
+				<formatter type="xml" tofile="checkstyle-result.xml"/>
 			</checkstyle>
 		</target>
 		
@@ -41,11 +40,11 @@
 				<fileset dir="${buildOutputDir}">
 					<include name="**/*.class"/>
 				</fileset>
-			<manifest>				
-				<attribute name="Built-By" value="${buildUser}" />
-				<attribute name="Version" value="${_version}" />
-				<attribute name="Main-Class" value="${mainClass}" />
-			</manifest>
+				<manifest>				
+					<attribute name="Built-By" value="${buildUser}" />
+					<attribute name="Version" value="${_version}" />
+					<attribute name="Main-Class" value="${mainClass}" />
+				</manifest>
 			</jar>
 		</target>
 		
